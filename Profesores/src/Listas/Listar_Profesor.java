@@ -30,10 +30,14 @@ public class Listar_Profesor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        profesores_titulares = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Listar Profesor");
+        jLabel1.setText("Listas de Profesores");
 
         jButton1.setText("Regresar a la pagina Principal");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -49,32 +53,79 @@ public class Listar_Profesor extends javax.swing.JFrame {
             }
         });
 
+        profesores_titulares.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "CC", "Nombre", "Apellido", "Cargo", "EPS", "", "Bono Hijo", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14"
+            }
+        ));
+        jScrollPane1.setViewportView(profesores_titulares);
+        if (profesores_titulares.getColumnModel().getColumnCount() > 0) {
+            profesores_titulares.getColumnModel().getColumn(0).setHeaderValue("CC");
+            profesores_titulares.getColumnModel().getColumn(1).setHeaderValue("Nombre");
+            profesores_titulares.getColumnModel().getColumn(2).setHeaderValue("Apellido");
+            profesores_titulares.getColumnModel().getColumn(3).setHeaderValue("Cargo");
+            profesores_titulares.getColumnModel().getColumn(4).setHeaderValue("EPS");
+            profesores_titulares.getColumnModel().getColumn(5).setHeaderValue("N° Hijos");
+            profesores_titulares.getColumnModel().getColumn(6).setHeaderValue("Bono Hijo");
+            profesores_titulares.getColumnModel().getColumn(7).setHeaderValue("Horas trabajadas");
+            profesores_titulares.getColumnModel().getColumn(8).setHeaderValue("Valor B/H");
+            profesores_titulares.getColumnModel().getColumn(9).setHeaderValue("Casado");
+            profesores_titulares.getColumnModel().getColumn(10).setHeaderValue("Title 11");
+            profesores_titulares.getColumnModel().getColumn(11).setHeaderValue("Title 12");
+            profesores_titulares.getColumnModel().getColumn(12).setHeaderValue("Title 13");
+            profesores_titulares.getColumnModel().getColumn(13).setHeaderValue("Title 14");
+        }
+
+        jLabel2.setText("Profesores Titulares");
+
+        jLabel3.setText("Profesores Interinos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(153, 153, 153))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(67, 67, 67))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(jButton1)
+                        .addGap(121, 121, 121)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(344, 344, 344)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(344, 344, 344)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(110, 110, 110)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addGap(54, 54, 54))
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -132,6 +183,10 @@ public class Listar_Profesor extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable profesores_titulares;
     // End of variables declaration//GEN-END:variables
 }
 
